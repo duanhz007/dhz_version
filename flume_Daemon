@@ -3,6 +3,8 @@ FLUMEDIR=/usr/local/flume
 FLUME_LOGFILE=$FLUMEDIR/flume_Daemon.log
 FLUME_START=$FLUMEDIR/flumestartup.sh
 
+touch $FLUMEDIR/flume_Daemon.log
+
 whike [ 1 ]
   do
     FLUME_STATUS=`ps -ef |grep './conf/flumedzwl.conf' |grep -v grep |awk '{print $2}'`
@@ -14,5 +16,5 @@ whike [ 1 ]
        else
          echo "flume is running,checked `date`! " >> $FLUME_LOGFILE
       fi
-     sleep 10
+     sleep 30
    done
