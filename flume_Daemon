@@ -13,8 +13,9 @@ whike [ 1 ]
          pushd $FLUMEDIR
 	   nohup sh $FLUME_START
 	 popd
+          echo "restart flume on `date` " >> $FLUME_LOGFILE
        else
-         echo "flume is running,checked `date`! " >> $FLUME_LOGFILE
+          echo "flume is running,checked `date`! " >> $FLUME_LOGFILE
       fi
      sleep 30
    done
